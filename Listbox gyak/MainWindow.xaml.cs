@@ -41,22 +41,48 @@ namespace Listbox_gyak
 
         private void DarabFrissites()
         {
-
+            lblDarab.Content = "Termékek száma: " + termekekLista.Count;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            string termek = txtTermek.Text;
 
+            if (termek == "")
+            {
+                MessageBox.Show("Írj be egy terméknevet!");
+            }
+            else
+            {
+                termekekLista.Add(termek);
+
+                ListaFrissites();
+
+                txtTermek.Clear();
+            }
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            if (lbTermekek.SelectedItem != null)
+            {
+                int index = lbTermekek.SelectedIndex;
 
+                termekekLista.RemoveAt(index);
+
+                ListaFrissites();
+            }
+            else
+            {
+                MessageBox.Show("Nincs kiválasztva termék!");
+            }
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
+            termekekLista.Clear();
 
+            ListaFrissites();
         }
     }
 }
