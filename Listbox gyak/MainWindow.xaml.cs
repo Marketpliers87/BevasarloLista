@@ -30,7 +30,7 @@ namespace Listbox_gyak
 
             for (int i = 0; i < termekekLista.Count; i++)
             {
-                megjelenitettLista.Add((i + 1) + termekekLista[i]);
+                megjelenitettLista.Add((i + 1) + ". " + termekekLista[i]);
             }
 
             lbTermekek.ItemsSource = null;
