@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Listbox_gyak"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="BevasarloLista" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Termék neve:"/>
+            <TextBox x:Name="txtTermek" Height="30" Margin="0,5,0,10"/>
+            <Button x:Name="btnAdd" Content="Hozzáadás" Height="30" Click="btnAdd_Click"/>
+        </StackPanel>
+
+        <ListBox x:Name="lbTermekek" Grid.Row="1" Margin="0,15,0,15"/>
+        
+        <StackPanel Grid.Row="2">
+            <Label x:Name="lblDarab" Content="Termékek száma: 0"/>
+            <Button x:Name="btnDelete" Content="Kijelölt törlése" Height="30" Margin="0,5,0,5" Click="btnDelete_Click"/>
+            <Button x:Name="btnClear" Content="Mindent töröl" Height="30" Click="btnClear_Click"/>
+        </StackPanel>
 
     </Grid>
 </Window>
